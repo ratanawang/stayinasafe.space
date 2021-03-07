@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+html {
+    scroll-behavior: smooth;
+}
+h1 {
+     color: #403f63;
+     font-size: 50px;
+ }
+p {
+     margin-top: 15px;
+     color: #403f63;
+     font-size: 15px;
+     line-height: 30px;
+ }
+section{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+/* Nav Bar */
+a, button {
+    font-weight: 500;
+    font-size: 16px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+nav {
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+}
+
+.logo {
+    cursor: pointer;
+    max-height: 50px;
+}
+
+.nav-report button{
+    padding: 9px 25px;
+    background-color: #C36891;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.nav-report button:hover {
+    background-color: #F384AA;
+}
+
+/* intro */
+#intro {
+    background-position: center;
+    background-size: cover;
+    background-image: url("resources/front.png");
+    box-shadow: inset 0 0 0 1000px rgba(255,255,255,.6);
+    padding-left: 8%;
+    padding-right: 8%;
+    box-sizing: border-box;
+}
+
+.main-button {
+     margin-top: 15px;
+ }
+.main-button button{
+    padding: 9px 25px;
+    background-color: #403f63;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+.main-button button:hover{
+    background-color: #817eb0;
+}
+
+/* location */
+#location {
+    background-position: center;
+    background-size: cover;
+    background-image: url("resources/middle.png");
+    box-shadow: inset 0 0 0 1000px rgba(255,255,255,.6);
+    padding-left: 8%;
+    padding-right: 8%;
+    box-sizing: border-box;
+    display: flex;
+}
+
+.map{
+    height: 500px;
+    width: 50%;
+    border-radius: 20px;
+    margin-right: 5%;
+    justify-content: center;
+}
+.row {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.col {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 50%;
+    display: block;
+}
+
+/* report */
+#report {
+    background-position: center;
+    background-size: cover;
+    padding-left: 8%;
+    padding-right: 8%;
+    box-sizing: border-box;
+    align-items: center;
+    background-image: url("resources/last.png");
+    box-shadow: inset 0 0 0 1000px rgba(255,255,255,.6);
+}
+.option {
+    border-radius: 12.5px;
+    background-color: #403f63;
+    color: #ffffff;
+    text-align: center;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+.option:hover{
+    background-color: #817eb0;
+}
+textarea {
+    width: 100%;
+    height: 150px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    background-color: #403f63;
+    color: #ffffff;
+    border-radius: 10px;
+    border: none;
+    padding: 10px;
+}
+h2 {
+     margin: 5px;
+     color: #403f63;
+     font-size: 25px;
+ }
+label {
+     margin: 5px;
+     color: #403f63;
+     font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+}
