@@ -11,11 +11,19 @@ function getLocation() {
     navigator.geolocation.getCurrentPosition(successCallBack, errorCallBack)
 }
 
-// document.querySelector('#checkLocation').addEventListener('click', getLocation);
+function getReportLocation() {
+    const successCallBack = (position) => {
+       center: { lat: position.coords.latitude, lng: position.coords.longitude }
+    };
+    const errorCallBack = (error) => {
+            console.error(error);
+    };
+    navigator.geolocation.getCurrentPosition(successCallBack, errorCallBack)
+}
 
 function initMap(){
     const map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 8,
+        zoom: 3,
         center: { lat: -25.344, lng: 131.036 }
     });
     const VerbalImage =

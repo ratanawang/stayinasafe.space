@@ -20,12 +20,12 @@
                 <div class="col" style="margin-top: 10%">
                     <h1>Your Safety is</h1>
                     <h1>Our Priority</h1>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                        when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                        It has survived not only five centuries,
-                        but also the leap into electronic typesetting,
-                        remaining essentially un</p>
+                    <p>Have you ever felt unsafe in a certain area and wanted to report it?
+                        Would you like to contribute to the safety of those in your community by reporting such experiences?
+                        Use stayinasafe.space, a web app that allows its users to anonymously report
+                        all kinds of potentially dangerous situations, including stalking and physical/verbal harassment.
+                        It then aggregates that data and highlights the geographic regions
+                        with prior incidents to help its users stay safe.</p>
                     <div class="main-button">
                         <a href="#location"><button>Check your Location</button></a>
                         <a href="#report"><button>Report</button></a>
@@ -43,8 +43,7 @@
             <div class="map" id="map" ></div>
             <div class="col" style="margin-left: 5%;">
                 <h1>Check your surroundings</h1><h1>with 1 click</h1>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                <p>Look up recent reports in your immediate surroundings by sharing your location with us.</p>
                 <div class="main-button">
                     <a><button onclick="getLocation()">Check your Location</button></a>
                 </div>
@@ -53,6 +52,77 @@
     </section>
 
     <section id="report">
+        <div class="row">
+            <div class="col" style="width: 50%;">
+                <h1>See something? Experience something?</h1><h1> Report it.</h1>
+                <p>Report dangerous situations that you experience or witness. All contributions will be recorded in our database to help prevent future cases.
+                Notes: This may not be used as an emergency service. In case of an emergency, please call 9-1-1.</p>
+            </div>
+            <div class="col">
+                <form>
+                    <h2 class="name">Location - Where did it happen?</h2>
+                    <div class="main-button" style="margin: 0;">
+                        <a><button onclick="getReportLocation()">Click to get your Location</button></a>
+                    </div>
+
+                    <h2 class="name">Time - When did it happen?</h2>
+                    <label class="year">Year</label>
+                    <select class="option" name="year">
+                        <option disabled="disabled" selected="selected">Choose</option>
+                        <option>2021</option>
+                        <option>2020</option>
+                        <option>2019</option>
+                        <option>2018</option>
+                        <option>2017</option>
+                        <option>2016</option>
+                        <option>2015</option>
+                        <option>2014</option>
+                        <option>2013</option>
+                        <option>2012</option>
+                        <option>2011</option>
+                    </select>
+                    <label class="month">Month</label>
+                    <select class="option" name="month">
+                        <option disabled="disabled" selected="selected">Choose</option>
+                        <option>Jan</option><option>Feb</option><option>Mar</option>
+                        <option>Apr</option><option>May</option><option>Jun</option>
+                        <option>Jul</option><option>Aug</option><option>Sep</option>
+                        <option>Oct</option><option>Nov</option><option>Dec</option>
+                    </select>
+                    <label class="day">Day</label>
+                    <select class="option" name="day">
+                        <option disabled="disabled" selected="selected">Choose</option>
+                        <option>1</option><option>2</option><option>3</option>
+                        <option>4</option><option>5</option><option>6</option>
+                        <option>7</option><option>8</option><option>9</option>
+                        <option>10</option><option>11</option><option>12</option>
+                        <option>13</option><option>14</option><option>15</option>
+                        <option>16</option><option>17</option><option>18</option>
+                        <option>19</option><option>20</option><option>21</option>
+                        <option>22</option><option>23</option><option>24</option>
+                        <option>25</option><option>26</option><option>27</option>
+                        <option>28</option><option>29</option><option>30</option>
+                        <option>31</option>
+                    </select>
+
+                    <h2 class="name">Situation - What happened?</h2>
+                    <select class="option" name="situation">
+                        <option disabled="disabled" selected="selected">Choose</option>
+                        <option>Stalking</option>
+                        <option>Verbal harassment</option>
+                        <option>Physical harassment</option>
+                        <option>Other</option>
+                    </select>
+
+                    <h2 class="name">Description - How did it happen?</h2>
+                    <textarea></textarea>
+
+                    <div class="main-button" style="margin: 0;">
+                        <a><button>Report</button></a>
+                    </div>
+                </form>
+            </div>
+        </div>
     </section>
 
     <script
@@ -60,14 +130,5 @@
       async
     ></script>
 
-    <script>
-        const successCallBack = (position) => {
-            console.log(position);
-        };
-        const errorCallBack = (error) => {
-            console.error(error);
-        };
-        navigator.geolocation.getCurrentPosition(successCallBack, errorCallBack)
-    </script>
 </body>
 </html>
