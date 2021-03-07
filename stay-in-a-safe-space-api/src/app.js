@@ -61,7 +61,7 @@ app.get('/', async (req, res) => {
   const client = await pool.connect();
   const resp = await client.query("SELECT lat, lng FROM reports.stalk");
   StalkLocations = resp.rows.map(({ lat, lng }) => ({ lat: parseFloat(lat), lng: parseFloat(lng) }));
-
+  console.log(StalkLocations);
   const resp2 = await client.query("SELECT lat, lng FROM reports.physical");
   PhysicalLocations = resp2.rows.map(({ lat, lng }) => ({ lat: parseFloat(lat), lng: parseFloat(lng) }));
 
@@ -88,9 +88,9 @@ app.post('/', async (request, response) => {
     query_string = "INSERT INTO reports.verbal (lat, lng, time, context) VALUES (" + String(lat) + ", " + String(lng) + ", '" + String(time) + "', '" + String(context) + "');";
     const resp3 = await client.query("SELECT lat, lng FROM reports.verbal");
   } else if (type_danger == 'physical') {
-    query_string = "INSERT INTO reports.physical (lat, lng, time, context) VALUES (" + String(lat) + "," + String(lng) + "," + String(time) + "," + String(context) + ");";
+    query_string = "INSERT INTO reports.physical (lat, lng, time, context) VALUES (" + String(lat) + ", " + String(lng) + ", '" + String(time) + "', '" + String(context) + "');";
   } else {
-    query_string = "INSERT INTO reports.stalk (lat, lng, time, context) VALUES (" + String(lat) + "," + String(lng) + "," + String(time) + "," + String(context) + ");";
+    query_string = "INSERT INTO reports.stalk (lat, lng, time, context) VALUES (" + String(lat) + ", " + String(lng) + ", '" + String(time) + "', '" + String(context) + "');";
   }
   console.log(query_string);
   await client.query(query_string);
