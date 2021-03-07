@@ -1,7 +1,21 @@
+function getLocation() {
+    const successCallBack = (position) => {
+            const map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 8,
+                center: { lat: position.coords.latitude, lng: position.coords.longitude }
+            });
+    };
+    const errorCallBack = (error) => {
+            console.error(error);
+    };
+    navigator.geolocation.getCurrentPosition(successCallBack, errorCallBack)
+}
+
+// document.querySelector('#checkLocation').addEventListener('click', getLocation);
+
 function initMap(){
     const map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 3,
-        // center: {lat: 49.2827, lng: -123.1207}
+        zoom: 8,
         center: { lat: -25.344, lng: 131.036 }
     });
     const VerbalImage =

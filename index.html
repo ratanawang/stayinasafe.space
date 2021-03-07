@@ -4,23 +4,70 @@
     <meta charset="UTF-8">
     <title>stayinasafe.space</title>
     <script src="index.js"></script>
-    <style>
-        #map{
-            height: 400px;
-            width:75%;
-        }
-    </style>
+    <link rel="stylesheet" href="index.css">
 </head>
+
 <body>
-<!--    <header>-->
-<!--        <img class="logo" src="" alt="logo">-->
-<!--        <a class=""-->
-<!--    </header>-->
-    <hi>My Map</hi>
-    <div id="map"></div>
+
+    <nav>
+        <img class="logo" src="resources/logo.png" alt="logo">
+        <a class="nav-report" href="#report"><button>Report</button></a>
+    </nav>
+
+    <section id="intro">
+        <main class="main">
+            <div class="row">
+                <div class="col" style="margin-top: 10%">
+                    <h1>Your Safety is</h1>
+                    <h1>Our Priority</h1>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                        when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                        It has survived not only five centuries,
+                        but also the leap into electronic typesetting,
+                        remaining essentially un</p>
+                    <div class="main-button">
+                        <a href="#location"><button>Check your Location</button></a>
+                        <a href="#report"><button>Report</button></a>
+                    </div>
+                </div>
+                <div class="col" style="margin-top: 10%">
+                    <img src="resources/Cartoon.png" >
+                </div>
+            </div>
+        </main>
+    </section>
+
+    <section id="location">
+        <div class="row">
+            <div class="map" id="map" ></div>
+            <div class="col" style="margin-left: 5%;">
+                <h1>Check your surroundings</h1><h1>with 1 click</h1>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                <div class="main-button">
+                    <a><button onclick="getLocation()">Check your Location</button></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="report">
+    </section>
+
     <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDCNExKQot8OvyqugutiZ9CI3aq37smbNU&callback=initMap&libraries=&v=weekly"
       async
     ></script>
+
+    <script>
+        const successCallBack = (position) => {
+            console.log(position);
+        };
+        const errorCallBack = (error) => {
+            console.error(error);
+        };
+        navigator.geolocation.getCurrentPosition(successCallBack, errorCallBack)
+    </script>
 </body>
 </html>
